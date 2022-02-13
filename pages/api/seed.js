@@ -6,7 +6,7 @@ import User from '../../models/User';
 
 const handler = nc();
 
-handler.get(async (req, res) => {
+handler.get(async (_req, res) => {
   await db.connect();
   await User.deleteMany();
   await User.insertMany(data.users);
