@@ -25,7 +25,6 @@ export default function Shipping() {
   } = useForm();
 
   const router = useRouter();
-  const { redirect } = router.query;
   const { state, dispatch } = useContext(Store);
   const {
     userInfo,
@@ -40,7 +39,16 @@ export default function Shipping() {
     setValue('fullName', shippingAddress.city);
     setValue('fullName', shippingAddress.postalCode);
     setValue('fullName', shippingAddress.country);
-  }, []);
+  }, [
+    router,
+    setValue,
+    shippingAddress.address,
+    shippingAddress.city,
+    shippingAddress.country,
+    shippingAddress.fullName,
+    shippingAddress.postalCode,
+    userInfo,
+  ]);
 
   const classes = useStyles();
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
