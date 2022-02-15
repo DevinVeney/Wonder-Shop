@@ -70,7 +70,7 @@ export default function ProductScreen(props) {
               <Typography>Category: {product.category}</Typography>
             </ListItem>
             <ListItem>
-              <Typography>Brand {product.brand}</Typography>
+              <Typography>Brand: {product.brand}</Typography>
             </ListItem>
             <ListItem>
               <Typography>
